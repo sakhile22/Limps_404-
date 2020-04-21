@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Limps_404!</title>
+
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:60'>
+     <link rel="stylesheet" href="./assets/css/style.css"
+
+</head>
+<body>
+  <div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+    <div class="login-form">
+      <form class="sign-in-htm" action="./api/user/login.php" method="GET">
+        <div class="group">
+          <label for="user" class="label">Username</label>
+          <input id="username" name="username" type="text" class="input">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="password" name="password" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check"><span class="icon"></span> Keep me Signed in</label>
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Sign In">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <a href="./forgot-password-master/forgot-password.html">Forgot Password?</a>
+        </div>
+      </form>
+      <form class="sign-up-htm" action="./api/user/signup.php" method="POST">
+        <div class="group">
+          <label for="user" class="label">Username</label>
+          <input id="username" name="username" type="text" class="input">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="password" name="password" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Confirm Password</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <label for="email" class="label">Email</label>
+          <input id="email" name="email" type="email" class="input" data-type="email">
+        </div>
+        <div class="group">
+          <label for="cont" class="label">Contact</label>
+          <input id="Contact" name="Contact" type="Contact" class="input" data-type="Contact">
+        </div>
+        <div class="group">
+          <label for="company" class="label">Company Name</label>
+          <input id="name" name="company name" type="Name" class="input" data-type="text">
+        </div>
+        <div class="group">
+          <label for="logo" class="label">company logo</label>
+          <input id="logo" name="company logo" type="image" class="input" data-type="image">
+        </div>
+        <div class="group">
+          <label for="number" class="label">House number</label>
+          <input id="house number" name="house number" type="text" class="input" data-type="text">
+        </div>
+        <div class="group">
+          <label for="street" class="label">street</label>
+          <input id="street" name="street" type="text" class="input" data-type="text">
+        </div>
+        <div class="group">
+          <label for="city" class="label">city</label>
+          <input id="city" name="city" type="text" class="input" data-type="text">
+        </div>
+        <div class="group">
+          <label for="country" class="label">country</label>
+          <input id="country" name="country" type="country" class="input" data-type="country">
+        </div>
+        <div class="group">
+          <label for="province" class="label">Province</label>
+          <input id="province" name="province" type="text" class="input" data-type="text">
+        </div>
+        <div class="group">
+          <label for="code" class="label">Post code</label>
+          <input id="code" name="post code" type="number" class="input" data-type="number">
+        </div>
+        <div class="group">
+          <label for="registration number" class="label">Company registration number</label>
+          <input id="reg number" name="company registration number" type="number" class="input" data-type="number">
+        </div>
+        <div class="group">
+          <label for="website" class="label">company website</label>
+          <input id="website" name="company website" type="website" class="input" data-type="website">
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Sign Up">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <label for="tab-1">Already Member?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
