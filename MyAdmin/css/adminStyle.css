@@ -1,0 +1,239 @@
+
+html {
+  font-size: 14px;
+}
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 17px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  p {
+    font-size: 1em;
+    margin-bottom: 1.8em;
+  }
+}
+
+body {
+  font-size: 1em;
+}
+a {
+  color: #37a6c4;
+}
+a:hover {
+  text-decoration: none;
+  color: #5db9d1;
+}
+
+/*background colors*/
+.bk-primary {
+  background: #325d88;
+}
+.bk-success {
+  background: #008080;
+}
+.bk-warning {
+  background: #f47c3c;
+}
+.bk-happy{
+  background: #001a66;
+}
+.bk-danger {
+  background: #d9534f;
+}
+.bk-info {
+  background: #29abe0;
+}
+
+.panel {
+  overflow: hidden;
+}
+
+
+.text-white,
+.text-light {
+  color: #fff !important;
+}
+.link-white a {
+  color: #fff;
+}
+.text-grey {
+  color: #ccc;
+}
+.text-dgrey {
+  color: #818181;
+}
+.text-brand {
+  color: #37a6c4;
+}
+.text-yellow {
+  color: #ffff00;
+}
+.title .line {
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #222;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* content*/
+.page-title {
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.brand {
+  	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+  position: relative;
+  z-index: 3;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.brand .menu-btn {
+  float: right;
+  background: #232d3b;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  padding: 20px 20px;
+}
+@media only screen and (min-width: 992px) {
+  .brand .menu-btn {
+    display: none;
+  }
+}
+
+
+.brand .ts-profile-nav {
+  float: right;
+  display: none;
+}
+.brand .ts-profile-nav li {
+  float: left;
+  position: relative;
+}
+.brand .ts-profile-nav li a {
+  display: block;
+  padding: 20px;
+  color: #fff;
+}
+.brand .ts-profile-nav li ul {
+  visibility: hidden;
+  opacity: 0;
+  right: 0;
+  position: absolute;
+}
+.brand .ts-profile-nav li ul li {
+  float: none;
+  width: 180px;
+}
+.brand .ts-profile-nav li ul li a {
+  padding: 10px 20px;
+  background: #222;
+}
+.brand .ts-profile-nav .ts-account .fa-angle-down {
+  float: right;
+}
+.brand .ts-profile-nav .ts-account > a {
+  width: 180px;
+  background: #2c3136;
+}
+.brand .ts-profile-nav .ts-account .ts-avatar {
+  border-radius: 50%;
+  height: 28px;
+  margin: -10px 0;
+  margin-right: 10px;
+}
+.brand .ts-profile-nav .ts-account:hover ul {
+  visibility: visible;
+  opacity: 1;
+}
+@media only screen and (min-width: 992px) {
+  .brand .ts-profile-nav {
+    display: block;
+  }
+}
+
+.ts-sidebar {
+  background: #000000;
+  max-height: 0;
+  transition: max-height 0.3s;
+  overflow: hidden;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 60px;
+  overflow-y: auto;
+}
+.ts-sidebar .hidden-side {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .ts-sidebar .ts-profile-nav {
+    display: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .ts-sidebar {
+    max-height: 100%;
+    bottom: 0;
+  }
+}
+.ts-sidebar-menu .ts-label {
+  color: #585c64;
+  font-weight: bold;
+  padding: 8px 15px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 10px;
+}
+.ts-sidebar-menu a {
+  display: block;
+  text-decoration: none;
+  padding: 12px 15px;
+  color: #fff;
+}
+.ts-sidebar-menu li {
+  padding-top: 15px;
+  padding-left: 13px;
+  position: relative;
+}
+.ts-sidebar-menu li i {
+  color: #585c64;
+  margin-right: 10px;
+}
+.ts-sidebar-menu li ul {
+  display: block;
+  padding-left: 25px;
+  background:#222;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ts-main-content .content-wrapper {
+  padding-top: 15px;
+  margin-top: 60px;
+}
+@media only screen and (min-width: 992px) {
+  .ts-main-content .ts-sidebar {
+    width: 200px;
+    float: left;
+  }
+  .ts-main-content .content-wrapper {
+    margin-left: 200px;
+  }
+}
