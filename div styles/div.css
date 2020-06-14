@@ -1,0 +1,172 @@
+
+              
+            .me{
+              
+              text-align: center ; 
+              width: 580px; 
+              height: auto;
+              margin: 0 auto ; 
+              margin-top: 40px; 
+              margin-bottom: 20px; 
+              background-color: #FFFF;
+              border-radius: 10px;
+          }
+          #logo{
+              
+              width: 55px ;
+              height: 48px ; 
+              float:left; 
+              margin-left: 10px;
+              margin-top: 10px;
+          }
+          #top-part{
+              position: relative;  
+             
+              
+              height: 90px;
+        
+          }
+          #Organisation_name{
+              float: left;
+              margin-left: 10px;
+              margin-top: 10px;
+              
+          }
+ 
+          #locduration{
+           float: left;    
+
+          }
+          #contactica{
+
+             
+          }
+            #contact_no{
+
+            }
+  
+          #starttime{
+      
+             
+              
+          }
+          #endtime{
+
+             
+
+          }
+          #emailz{
+ 
+          }
+            #emailaddress{
+
+            }
+
+          #location{
+    
+              
+           
+          }
+          #start{
+     
+            padding-left: 10px;
+          }
+          #end{
+          
+            float: right;
+          
+          }
+          #description{
+             
+               
+            
+               height:auto;
+           
+              word-wrap: break-word;
+          }
+  
+          #coverphoto{
+              
+              width:100%; 
+              height:250px;
+          }
+
+          #titlesize{
+              
+             
+              word-wrap: break-word;
+              position: relative;
+              top:-30px;
+              background-color: aqua ; 
+             
+    
+          }
+          #title{
+           padding-right: 100px;
+    
+        
+         
+           
+         
+          }
+          #type{
+                position: relative; 
+                top: 10px;
+          }
+          #speakerdiv{
+              word-wrap: break-word ; 
+              width: auto ; 
+        
+          }
+     
+          #registrationdiv{
+              word-wrap: break-word ; 
+              width: auto ;  
+          }
+ 
+    
+          #name{
+            float: left;    
+          }
+  
+
+          #companyname{
+             
+              height: auto;
+              word-wrap: break-word;
+              width: auto;
+          }
+          #names{
+              
+                height: auto;
+                float: left;
+                position: relative ; 
+                top: -60px;
+                left: 75px;
+              
+          }
+          #durationstart{
+              word-wrap: break-word; 
+              width: auto ; 
+              
+              
+          }
+          #durationend{
+              word-wrap: break-word ; 
+              width: auto ;
+          }
+#desc{
+    
+    float:left;
+}
+    
+        .carousel-item{
+    height: 500px;
+     } 
+    .carousel-item img{
+    height: 500px;
+    }
+
+
+
+    
