@@ -45,7 +45,7 @@ jobs:
           command: php artisan key:generate
       - run:
           name: "Run tests"
-          command: phpdbg -qrr vendor/bin/phpunit --coverage-html
+          command: phpunit -c app --coverage-html=./build/reports/phpunit
       - store_artifacts:
           path: build/coverage-report
 
