@@ -69,15 +69,16 @@ try {
     <div class="panel-body">
 
       <div class="col-lg-12" style="padding-left: 0; padding-right: 0;" >
-        <form action="index.php" method="get" >
+        <form action="offers.php" method="get" >
         <div class="col-lg-6 pull-left"style="padding-left: 0;"  >
           <span class="pull-left">  
             <label class="col-lg-12 control-label" for="keyword" style="padding-right: 0;">
               <input type="text" value="<?php echo $_GET["keyword"]; ?>" placeholder="search organisation" id="" class="form-control" name="keyword" style="height: 41px;">
             </label>
             </span>
-          <button class="btn btn-info">search</button>
+          <button class="btn btn-info">search</button>    
         </div>
+            
         </form>
       </div>
 
@@ -98,8 +99,8 @@ try {
   <?php foreach ($results as $res) { ?>
                 <tr>
                   <td style="text-align: center;">
-                <?php $pic = ($res["profile_pic"] <> "" ) ? $res["company_logo"] : "no_avatar.png" ?>
-                    <a href="profile_pics/<?php echo $pic ?>" target="_blank"><img src="profile_pics/<?php echo $pic ?>" alt="" width="50" height="50" ></a>
+                <?php $pic = ($res["company_logo"] <> "" ) ? $res["company_logo"] : "no_avatar.png" ?>
+                    <a href="../Work/php/logos/<?php echo $pic ?>" target="_blank"><img src="../Work/php/logos/<?php echo $pic ?>" alt="" width="50" height="50" ></a>
                   </td>
                   <td><?php echo $res["company_name"]; ?></td>
                   <td><?php echo $res["offer_title"]; ?></td>

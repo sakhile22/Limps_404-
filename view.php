@@ -17,14 +17,14 @@ try {
 <div class="row">
   <ul class="breadcrumb">
       <li><a href="offers.php">Home</a></li>
-      <li class="active">View Jobs</li>
+      <li class="active">View Offers</li>
     </ul>
 </div>
 
   <div class="row">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">View Job</h3>
+        <h3 class="panel-title">View Offer</h3>
       </div>
       <div class="panel-body">
         <form class="form-horizontal" name="contact_form" id="contact_form" enctype="multipart/form-data" method="post">
@@ -34,7 +34,7 @@ try {
               <label class="col-lg-4 control-label" for="profile_pic"><?php echo $results[0]["company_name"] ?></label>
               <div class="col-lg-5">
                 <?php $pic = ($results[0]["company_logo"] <> "" ) ? $results[0]["company_logo"] : "no_avatar.png" ?>
-                <a href="profile_pics/<?php echo $pic ?>" target="_blank"><img src="profile_pics/<?php echo $pic ?>" alt="" width="100" height="100" class="thumbnail" ></a>
+                <a href="../Work/php/logos/<?php echo $pic ?>" target="_blank"><img src="../Work/php/logos/<?php echo $pic ?>" alt="" width="100" height="100" class="thumbnail" ></a>
               </div>
             </div>      
               
@@ -97,12 +97,14 @@ try {
               
             <div class="form-group">
               <label class="col-lg-4 control-label" for="address"></label>
-              <div class="col-lg-5">
-              <a href="<?php echo $res["application_link"]; ?>" target="_blank"><button class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span>Apply</button></a>&nbsp;
-              </div>
+
+                
             </div>
+              
           </fieldset>
+            
         </form>
+         
 
       </div>
     </div>

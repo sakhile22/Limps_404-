@@ -199,9 +199,6 @@
             <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Notifications.php">Notifications</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="offers.php">Offers</a>
           </li>
           <li class="nav-item">
