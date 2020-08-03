@@ -48,7 +48,7 @@ jobs:
       - run:
           name: "Run tests"
           command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
-      - coveralls/upload
+      
       - store_artifacts:
           path: build/coverage-report
 
