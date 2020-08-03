@@ -51,6 +51,8 @@ jobs:
       
       - store_artifacts:
           path: build/coverage-report
+       
+      - coveralls/upload
 
       # run tests with phpunit
       - run:
