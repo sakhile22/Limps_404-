@@ -4,7 +4,7 @@
 #
 version: 2.1
 orbs:
-  coveralls: coveralls/coveralls@1.0.6
+  coveralls: coveralls/coveralls@1.0.4
 jobs:
   build:
     docker:
@@ -49,6 +49,7 @@ jobs:
           name: "Run tests"
           command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
       
+      - coveralls/upload
       - store_artifacts:
           path: build/coverage-report
        
@@ -59,7 +60,7 @@ jobs:
           name: "Run Unit Tests"
           command: ./vendor/bin/phpunit tests/Unit
           
-      - coveralls/upload
+      
      
 notify:
   webhooks:
