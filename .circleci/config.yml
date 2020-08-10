@@ -70,7 +70,10 @@ jobs:
      
          
 
-
+machine:
+  environment:
+    COVERALLS_REPO_TOKEN: <<3kYSPrgtcR6SJaKfOQrxcjSYUJ2UR9qg4>>
+    COVERALLS_PARALLEL: true
           
       
           
