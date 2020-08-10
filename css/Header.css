@@ -1,0 +1,102 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	font-family: "Roboto Cn", sans-serif;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(0, 115, 197);
+}
+
+a:hover {
+	color: rgb(212,175,55);
+}
+
+
+header {
+	width: 100%;
+	background-color: #fff;
+}
+
+.container {
+	max-width: 120rem;
+	width: 90%;
+	margin: 0 auto;
+}
+
+nav {
+	padding: 1rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+}
+
+nav ul {
+	display: flex;
+	text-align: right;
+	/* margin-left: 45rem; */
+}
+
+nav ul li {
+	list-style: none;
+	transform: translateX(100rem);
+	animation: slideIn .05s forwards;
+}
+
+nav ul li:nth-child(1) {
+	animation-delay: 0s;
+}
+
+nav ul li:nth-child(2) {
+	animation-delay: 0.5s;
+}
+
+nav ul li:nth-child(3) {
+	animation-delay: 1s;
+}
+
+nav ul li:nth-child(4) {
+	animation-delay: 1.5s;
+}
+
+nav ul li a {
+	padding: 1rem 0;
+	margin: 0 2rem;
+	position: relative;
+	letter-spacing: 1px;
+}
+
+nav ul li a:last-child {
+	margin-right: 0;
+}
+
+@keyframes slideIn {
+	from {
+
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+button {
+	background-color: rgb(0, 115, 197);
+	border: none;
+	border-radius: 1px;
+	width: 60px;
+	height: 25px;
+	cursor: pointer;
+}
