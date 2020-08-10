@@ -21,9 +21,6 @@ jobs:
                 command: |
                     mv .env.testing .env
 
-            - store_artifacts:
-                path:  build/coverage-report
-
             # Download and cache dependencies
             - restore_cache:
                 keys:
@@ -49,6 +46,9 @@ jobs:
             - run:
                 name: "Run Unit Tests"
                 command: ./vendor/bin/phpunit tests/Unit
+
+            - store_artifacts:
+                path:  build/coverage-report
 
 machine:
     environment:
