@@ -41,7 +41,6 @@
         }
     },
     "scripts": {
-        "test": "cross-env NODE_ENV=tests/Unit nyc --reporter=lcov --reporter=text --reporter=html mocha src/test/*.js --timeout 10000 -c --require @babel/register --exit",
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
