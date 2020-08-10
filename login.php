@@ -23,7 +23,6 @@
        if(mysqli_num_rows($result) ==1){
          $user = mysqli_fetch_assoc($result);
          $_SESSION['username'] = $user['Name'];
-         $_SESSION['signedIn'] = True;
          $_SESSION['id'] = $user['Employee_No'];
          //echo "name :" .$_SESSION['username'];
          //header('dashboard.php');
@@ -45,15 +44,27 @@
      }
    }
  }
+
+ header('Cache-Control: no cache');
+ session_cache_limiter('private_no_expire');
  ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" href="fontawesome-free-5.13.1-web/css/all.css">
+
+<style>
+.background {
+background-image: url("img/index.JPG");
+height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+</style>
 
 </head>
 <body>
@@ -65,16 +76,16 @@ integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zF
  </div>
  <div class="login-container" style="border-radius: 50px">
 
-    <img class="avatar" src="img/ui.png" >
+    <img class="avatar" src="img/avatar.svg" >
     <h1>Welcome Back!</h1>
 
-    <form class="form" method="post">
+    <form class="form" autocomplete="off" method="post">
         <i class ="fas fa-user input-prefix"></i>
-        <input type="text" name="username"  placeholder="Username (staff number)" style="width: 250px; caret-color: white;" >
+        <input type="text" name="username"  placeholder="Username (staff number)" style="width: 250px; caret-color: white;" required >
 
 
         <i class ="fas fa-lock input-prefix"  ></i>
-        <input type="password" name="password" placeholder="Password"  id="password" style="width: 250px; caret-color: white;">
+        <input type="password" name="password" placeholder="Password"  id="password" style="width: 250px; caret-color: white;" required>
 
 
         <a href="https://www.wits.ac.za/about-wits/visitor-information/visitor-information-access-to-campus/tss-and-your-kudu-card/wits-ict/" target="_blank">Forgot password?</a>

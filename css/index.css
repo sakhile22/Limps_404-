@@ -1,0 +1,138 @@
+body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+.logo img{
+   padding-top: 25px;
+   padding-right: 25px;
+   padding-left: 30px;
+   padding-bottom: 25px;
+   border-radius: 50px;
+}
+
+  html{
+  height: 100%;
+  margin: 0;
+  }
+
+  .background {
+  background-image: url("img/index.JPG");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+
+.login-container{
+	width: 330px;
+	height: 400px;
+	background: rgba(0,0,0,.5);
+	left: 50%;
+	top: 54%;
+	padding: 70px 30px;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	color: #fff;
+}
+.avatar{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: -50px;
+	border-radius: 50%;
+	left: calc(50% - 50px);
+}
+
+.login-container input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+h1{
+	margin: 0;
+	padding: 40px 0 20px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.login-container input[name="username"],
+ input[name="password"] {
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    height: 40px;
+    width:auto;
+    color: #fff;
+    font-size: 16px;
+    background: transparent;
+    text-align: left;
+    text-transform: 20px;
+    padding-left: 25px;
+}
+
+
+
+i{
+	position: absolute;
+	transform: translateY(12PX);
+}
+
+
+#password:-ms-input-placeholder {
+    padding-left: -50px;
+}
+
+
+/* Chrome, Firefox, Opera */
+::placeholder {
+  color: white;
+  opacity: 1;
+  font-size: 0.9rem;
+}
+
+/* Internet Explorer*/
+:-ms-input-placeholder {
+  color: white;
+}
+
+a{
+	display: block;
+	text-align: right;
+	text-decoration: none;
+	color: #fff;
+	font-size: 0.9rem;
+	transition: .3s;
+}
+
+a:hover{
+	color: #38d39f;
+}
+
+
+.login-container input[name="submit"] {
+
+	display: block;
+	border: none;
+	outline: none;
+	margin: 1rem 0;
+	height: 40px;
+	color: #fff;
+	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+	font-size:20px;
+	border-radius: 20px;
+	cursor: pointer;
+	cursor: pointer;
+	opacity: 0.9;
+
+}
+.login-container input[name="submit"]:hover{
+
+	opacity: 1;
+}
