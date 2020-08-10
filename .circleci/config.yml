@@ -4,7 +4,7 @@
 #
 version: 2.1
 orbs:
-  coveralls: escaletech/coveralls@1.0.0
+  coveralls: coveralls/coveralls@1.0.6
 jobs:
   build:
     docker:
@@ -59,6 +59,12 @@ jobs:
       - run:
           name: "Run Unit Tests"
           command: ./vendor/bin/phpunit tests/Unit
+          name: Install and Make
+          command: npm install && make test-coverage
+      - coveralls/upload 
+         
+
+
           
       
           
