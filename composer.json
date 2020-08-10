@@ -53,6 +53,7 @@
             "@php artisan package:discover"
         ]
     },
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
