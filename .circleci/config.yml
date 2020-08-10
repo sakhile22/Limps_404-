@@ -59,9 +59,11 @@ jobs:
       - run:
           name: "Run Unit Tests"
           command: ./vendor/bin/phpunit tests/Unit
-          name: Install and Make
-          command: npm install && make test-coverage
-      - coveralls/upload 
+     
+       - run:
+           name: "Install and Make"
+           command: npm install && make test-coverage
+       - coveralls/upload
          
 
 
