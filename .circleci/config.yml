@@ -73,7 +73,7 @@ jobs:
 machine:
   environment:
     COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
-    COVERALLS_PARALLEL: true
+    COVERALLS_PARALLEL: false
           
       
           
