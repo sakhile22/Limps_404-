@@ -51,6 +51,11 @@ jobs:
                 name: "Run Unit Tests"
                 command: ./vendor/bin/phpunit tests/Unit
 
+machine:
+    environment:
+        COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
+        COVERALLS_PARALLEL: true
+
 notify:
     webhooks:
         - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
