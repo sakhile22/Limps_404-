@@ -52,6 +52,8 @@ jobs:
       
       - store_artifacts:
           path: build/coverage-report
+          
+      - coveralls/upload
        
       
 
@@ -60,10 +62,9 @@ jobs:
           name: "Run Unit Tests"
           command: ./vendor/bin/phpunit tests/Unit
      
-      - run:
-          name: "Install and Make"
+     
          
-      - coveralls/upload
+     
          
 
 
