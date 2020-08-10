@@ -78,4 +78,4 @@ jobs:
      
 notify:
     webhooks:
-        - url: https://coveralls.io/webhook?repo_token=3kYSPrgtcR6SJaKfOQrxcjSYUJ2UR9qg4
+        - url: https://coveralls.io/webhook?repo_token=<<3kYSPrgtcR6SJaKfOQrxcjSYUJ2UR9qg4>>
