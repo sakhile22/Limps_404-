@@ -42,14 +42,14 @@ jobs:
                 name: "Generate App key"
                 command: php artisan key:generate
 
-            - run:
-                name: "Run tests"
-                command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
+            # - run:
+            #     name: "Run tests"
+            #     command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
 
             # run tests with phpunit
             - run:
                 name: "Run Unit Tests"
-                command: ./vendor/bin/phpunit tests/Unit
+                command: phpdbg ./vendor/bin/phpunit tests/Unit --coverage-html build/coverage-report
 
             - store_artifacts:
                 path:  build/coverage-report
