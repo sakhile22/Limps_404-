@@ -22,7 +22,7 @@
         </div>
         <div class="collapse navbar-collapse pull-left" id="bs-example-navbar-collapse-1" >
           <ul class="nav navbar-nav">
-            <li><a  href="index.php">Home</a></li>
+            <li><a  href="dashboard.php">Home</a></li>
             <li> <a  href="offers.php">Offers</a></li>
             <li><a  href="https://self-service.wits.ac.za/psp/csprod/UW_SELF_SERVICE/HRMS/?&cmd=login&languageCd=ENG">Student Self-Service</a></li>
             <li> <a  href=""><img src="images/usericon.svg" id="usricon" style="width: 30px;"></a></li>

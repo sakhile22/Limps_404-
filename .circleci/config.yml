@@ -2,7 +2,9 @@
 #
 # Check https://circleci.com/docs/2.0/language-php/ for more details
 #
-version: 2
+version: 2.1
+orbs:
+  coveralls: coveralls/coveralls@1.0.6
 jobs:
   build:
     docker:
@@ -46,10 +48,31 @@ jobs:
       - run:
           name: "Run tests"
           command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
+      
+      
       - store_artifacts:
           path: build/coverage-report
+          
+      - coveralls/upload
+       
+      
 
       # run tests with phpunit
       - run:
           name: "Run Unit Tests"
           command: ./vendor/bin/phpunit tests/Unit
+     
+     
+         
+     
+         
+
+
+          
+      
+          
+      
+     
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=${process.env.3kYSPrgtcR6SJaKfOQrxcjSYUJ2UR9qg4}

@@ -1,3 +1,9 @@
+<?php
+
+include_once 'source/session.php';
+
+?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0054)https://getbootstrap.com/docs/4.0/examples/offcanvas/# -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -5,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="image/Wits-University-logo.jpg">
+  
 
     <title>Student</title>
 
@@ -186,9 +192,15 @@
     </head>
 
   <body class="bg-light" data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+      
+    <?php if(!isset($_SESSION['username'])): header("location: logout.php");?>
 
-    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href=""><img src="images/wits.png" style="width:100px;"></a>
+    <?php else: ?>
+
+    <?php endif ?>
+
+    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+      <a class="navbar-brand" href=""><img src="images/wits.png" style="width:150px;"></a>
       <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -204,8 +216,15 @@
           <li class="nav-item">
             <a class="nav-link" href="https://self-service.wits.ac.za/psp/csprod/UW_SELF_SERVICE/HRMS/?&cmd=login&languageCd=ENG">Student Self-Service</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href=""><img src="images/usericon.svg" id="usricon" style="width: 30px;"></a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/usericon.svg" id="usricon" style="width: 30px;"></a>
+              
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href=""><?php echo $_SESSION['username']?></a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="logout.php">Logout</a>
+                    </div>
+            
           </li>
         </ul>
       </div>
