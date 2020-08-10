@@ -1,4 +1,4 @@
-version: 2.0
+version: 2.1
 orbs:
     coveralls: coveralls/coveralls@1.0.4
 jobs:
@@ -53,9 +53,9 @@ jobs:
 
 machine:
     environment:
-        COVERALLS_REPO_TOKEN: 3kYSPrgtcR6SJaKfOQrxcjSYUJ2UR9qg4
+        COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
         COVERALLS_PARALLEL: true
 
 notify:
     webhooks:
-        - url: https://coveralls.io/webhook?repo_token=3kYSPrgtcR6SJaKfOQrxcjSYUJ2UR9qg4
+        - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
