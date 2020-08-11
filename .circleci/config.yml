@@ -56,7 +56,7 @@ jobs:
                 command: npm run coverage
             
             - coveralls/upload:
-                path_to_lcov: vendor/bin/phpunit --coverage-clover coverage.xml | coveralls --verbose
+                path_to_lcov: vendor/bin/phpunit --coverage-html phpunit.xml
 
             # - run:
             #     name: "coveralls"
