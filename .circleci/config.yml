@@ -48,6 +48,10 @@ jobs:
           command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
           
       - run: # install coveralls
+          name: installing coveralls 
+          command: npm run coveralls
+          
+      - run: # running tests
           name: running coverage tests
           command: npm run test
           
