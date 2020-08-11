@@ -48,10 +48,10 @@ jobs:
                 # command: ./vendor/bin/phpunit tests/Unit
                 command: phpdbg -qrr vendor/bin/phpunit tests/Unit --coverage-html build/coverage-report
 
-            # - run: # run code coverage report
-            #     name: code-coverage
-            #     command: phpdbg -qrr vendor/bin/phpunit tests/Unit --coverage-html run/coverage-report
-                # command: npm run coverage-report
+            - run: # run code coverage report
+                name: code-coverage
+                # command: phpdbg -qrr vendor/bin/phpunit tests/Unit --coverage-html run/coverage-report
+                command: run/coverage-report
             
             - coveralls/upload
 
@@ -68,7 +68,6 @@ jobs:
 machine:
     environment:
         COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
-        COVERALLS_PARALLEL: true
 
 notify:
     webhooks:
