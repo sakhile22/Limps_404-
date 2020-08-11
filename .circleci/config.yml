@@ -55,7 +55,7 @@ jobs:
                 # command: phpdbg -qrr vendor/bin/phpunit tests/Unit --coverage-html run/coverage-report
                 command: npm run coverage
             
-            - coveralls/upload
+            - coveralls/upload:
                 path_to_lcov: vendor/bin/phpunit --coverage-clover coverage.xml
 
             # - run:
