@@ -10,12 +10,14 @@ orbs:
 # notify:
 #     webhooks:
 #         - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
-jobs:
+# jobs:
     build:
         docker:
             # Specify the version you desire here
             - image: circleci/php:7.4-node-browsers
-            - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
+                environment:
+                    COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
+                    COVERALLS_PARALLEL: true
 
         steps:
             - checkout
@@ -65,7 +67,4 @@ jobs:
             - store_artifacts:
                 path:  build/coverage-report
 
-            # webhooks:
-            #     - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
-
-
+            - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
