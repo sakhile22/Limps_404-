@@ -52,7 +52,7 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
         ],
-        "coverage": "nyc report --reporter=text-lcov | coveralls"
+        "coverage": "./coverage/lcov.info | coveralls --verbose"
     },
     "config": {
         "preferred-install": "dist",
