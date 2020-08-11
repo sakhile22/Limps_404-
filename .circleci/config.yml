@@ -48,7 +48,7 @@ jobs:
           command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
       
       - coveralls/upload:
-          path_to_lcov: ./vendor/bin/phpunit --coverage-clover=coverage.xml
+          path_to_lcov: vendor/bin/phpunit --coverage-html build/coverage-report
       
       - store_artifacts:
           path: build/coverage-report
