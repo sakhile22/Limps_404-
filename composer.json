@@ -41,7 +41,6 @@
         }
     },
     "scripts": {
-        "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text --reporter=html mocha src/tests/Unit/*.php --timeout 10000 -c --require @babel/register --exit",
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
@@ -51,8 +50,7 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
-        ],
-        "coverage": "nyc report --reporter=text-lcov | coveralls"
+        ]
     },
     "config": {
         "preferred-install": "dist",
