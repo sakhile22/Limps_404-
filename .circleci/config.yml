@@ -47,7 +47,8 @@ jobs:
           name: "Run tests"
           command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
       
-      - coveralls/upload
+      - coveralls/upload:
+          path_to_lcov: ./vendor/bin/phpunit --coverage-clover=coverage.xml
       
       - store_artifacts:
           path: build/coverage-report
@@ -75,15 +76,7 @@ jobs:
      
      
      
-         
-     
-         
-
-machine:
-  environment:
-    COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
-    COVERALLS_PARALLEL: false
-    path_to_lcov: vendor/bin/phpunit --coverage-html build/coverage-report
+    
           
       
           
