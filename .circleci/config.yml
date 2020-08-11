@@ -47,9 +47,14 @@ jobs:
           name: "Run tests"
           command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
           
+      - run: # install coveralls
+          name: coveralls-install
+          command: npm run coverage
+          
       - run: # run code coverage report
           name: code-coverage
-          command: npm run coverage
+          command: npm run test
+      
       
       - coveralls/upload:
           path_to_lcov: vendor/bin/phpunit --coverage-clover coverage.xml
