@@ -50,7 +50,8 @@ jobs:
 
             - run: # run code coverage report
                 name: code-coverage
-                command: npm run coverage-report
+                command: phpdbg -qrr vendor/bin/phpunit tests/Unit --coverage-html run/coverage-report
+                # command: npm run coverage-report
             - coveralls/upload
 
             # - run:
