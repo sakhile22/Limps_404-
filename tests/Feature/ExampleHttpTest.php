@@ -1,6 +1,5 @@
 <?php
 public function testUserCreationEndpointTest()
-
 {
     $name = $this->faker->name();
     $email = $this->faker->email();
