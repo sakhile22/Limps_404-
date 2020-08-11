@@ -19,12 +19,10 @@ jobs:
           command: |
             sudo apt update
             sudo docker-php-ext-install zip
-
       - run:
           name: "Create Environment file"
           command: |
             mv .env.testing .env
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -82,3 +80,22 @@ machine:
 notify:
     webhooks:
         - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
+<<<<<<< HEAD
+=======
+     
+
+          
+
+     
+     
+     
+         
+     
+         
+
+          
+      
+          
+      
+
+>>>>>>> 6ff5cc8346060e500abdf2406778ad4e459fcdd0
