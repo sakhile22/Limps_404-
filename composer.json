@@ -50,7 +50,8 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
-        ]
+        ],
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
     },
     "config": {
         "preferred-install": "dist",
