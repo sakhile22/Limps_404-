@@ -80,8 +80,7 @@ machine:
 notify:
     webhooks:
         - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
-<<<<<<< HEAD
-=======
+
      
 
           
@@ -98,4 +97,4 @@ notify:
           
       
 
->>>>>>> 6ff5cc8346060e500abdf2406778ad4e459fcdd0
+
