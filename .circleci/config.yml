@@ -15,9 +15,6 @@ orbs:
         docker:
             # Specify the version you desire here
             - image: circleci/php:7.4-node-browsers
-                environment:
-                    COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
-                    COVERALLS_PARALLEL: true
 
         steps:
             - checkout
