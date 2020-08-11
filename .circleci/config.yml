@@ -2,14 +2,14 @@ version: 2.1
 orbs:
     coveralls: coveralls/coveralls@1.0.4
 
-machine:
-    environment:
-        COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
-        COVERALLS_PARALLEL: true
+    machine:
+        environment:
+            COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
+            COVERALLS_PARALLEL: true
 
-notify:
-    webhooks:
-        - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
+    notify:
+        webhooks:
+            - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
 jobs:
     build:
         docker:
