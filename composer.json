@@ -41,6 +41,7 @@
         }
     },
     "scripts": {
+        "start": "node tests/Unit/ExampleUnitTest.php",
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
