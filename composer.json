@@ -41,7 +41,6 @@
         }
     },
     "scripts": {
-        "start": "node tests/Unit/ExampleUnitTest.php",
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
@@ -52,7 +51,7 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
         ],
-        "coverage": "nyc report --reporter=text-lcov | coveralls"
+        "start": "nyc report --reporter=text-lcov | coveralls"
     },
     "config": {
         "preferred-install": "dist",
