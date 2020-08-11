@@ -50,7 +50,7 @@ jobs:
 
             - run: # run code coverage report
                 name: code-coverage
-                command: npm run coverage
+                command: npm run coverage-report
             - coveralls/upload
 
             # - run:
