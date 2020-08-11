@@ -52,6 +52,9 @@ jobs:
             #     name: code-coverage
             #     command: phpdbg -qrr vendor/bin/phpunit tests/Unit --coverage-html run/coverage-report
                 # command: npm run coverage-report
+            - run:
+                name: Install and Make
+                command: 'npm install && make test-coverage'
             - coveralls/upload
 
             # - run:
