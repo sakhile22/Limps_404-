@@ -53,19 +53,18 @@ jobs:
       - store_artifacts:
           path: build/coverage-report
           
-<<<<<<< HEAD
+
       - run:
-	      name: "Create database and run migration"
-	      command: |
-	        touch database/database.sqlite
-	        php artisan migrate --env=testing
+	  name: "Create database and run migration"
+	  command: |
+	    touch database/database.sqlite
+	    php artisan migrate --env=testing
             
       - run:
-	      name: "Run Http Tests"
-	      command: ./vendor/bin/phpunit tests/Feature
+	  name: "Run Http Tests"
+	  command: ./vendor/bin/phpunit tests/Feature
           
-=======
->>>>>>> 5e388b262fc95817a941f023f1ed77747d2a6409
+
       
        
       
@@ -83,19 +82,8 @@ jobs:
      
          
 
-machine:
-  environment:
-    COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
-    COVERALLS_PARALLEL: false
           
       
           
       
-<<<<<<< HEAD
 
-=======
-     
-notify:
-    webhooks:
-        - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
->>>>>>> 5e388b262fc95817a941f023f1ed77747d2a6409
