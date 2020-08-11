@@ -51,9 +51,9 @@ jobs:
           
       machine:
         environment:
-          COVERALLS_REPO_TOKEN:Limps_404-
+          COVERALLS_REPO_TOKEN:Sakhile22/Limps_404-
           COVERALLS_PARALLEL: true
 
       notify:
         webhooks:
-          - url: https://coveralls.io/webhook?repo_token=Limps_404-   
+          - url: https://coveralls.io/webhook?repo_token=Sakhile22/Limps_404-   
