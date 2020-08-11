@@ -26,5 +26,8 @@
         "nyc": "^15.1.0",
         "popper.js": "^1.12",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "coverage": "^0.4.1"
     }
 }
