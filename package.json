@@ -9,9 +9,9 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text --reporter=html mocha src/test/*.js --timeout 10000 -c --require @babel/register --exit",
-        "coverage": "nyc report --reporter=text-lcov | coveralls"
+        
     },
-    
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "devDependencies": {
         "@babel/register": "^7.10.5",
         "axios": "^0.18",
