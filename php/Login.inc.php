@@ -2,8 +2,8 @@
 
     if (isset($_POST['login_submit'])) {
 
-        $connection = mysqli_connect("localhost", "root", "Sm*22^03%#", "organization");
-        // $connection = mysqli_connect("127.0.0.1", "s1830088", "s1830088", "d1830088");
+        // $connection = mysqli_connect("localhost", "root", "Sm*22^03%#", "organization");
+        $connection = mysqli_connect("127.0.0.1", "s1830088", "s1830088", "d1830088");
 
         $userId = $_POST['username'];
         $password = $_POST['pwd'];
@@ -42,8 +42,9 @@
                         session_start();
                         $_SESSION['user_id'] = $row['id_users'];
                         $_SESSION['username'] = $row['company_name'];
+                        $_SESSION['email'] = $row['email_users'];
                         
-                        header("Location: ../pages/home.php?login=success&username=$userId");
+                        header("Location: ../pages/home.php?login=success");
                         exit();
 
                     }

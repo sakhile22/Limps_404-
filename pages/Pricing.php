@@ -25,7 +25,12 @@
               $con = mysqli_connect("localhost", "root", "Sm*22^03%#") or die(mysqli_error($con));
               mysqli_select_db($con,"organization") or die(mysqli_error($con));
 
-              $username = mysqli_escape_string($con,$_GET['username']);
+              if (isset($_SESSION['username'])) {
+                $username = $_SESSION['username'];
+              }
+              else if (isset($_SESSION['email'])) {
+                $username = $_SESSION['email'];
+              }
 
               $result = mysqli_query($con,"SELECT company_name,email_users,company_address,country,telephone, province FROM users WHERE company_name = '$username' OR email_users = '$username' ") or die(mysqli_error($con)); 
               if ($result->num_rows === 1) {
