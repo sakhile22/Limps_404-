@@ -2,7 +2,7 @@
 
     if (isset($_POST["signup_submit"])) {
 
-        // $connection = mysqli_connect("127.0.0.1", "s1830088", "s1830088", "d1830088");
+        // $connection = mysqli_connect("localhost", "s1830088", "s1830088", "d1830088");
         $connection = mysqli_connect('localhost', 'root', 'Sm*22^03%#', 'organization');
 
         $company_name = $_POST['company_name'];
@@ -109,11 +109,11 @@
 
                      
                     Please click this link to activate your account:
-                    http://localhost/wits-career-portal/php/Verify.php?email='.$company_email.'&account_verify='.$hash.'
+                    http://lamp.ms.wits.ac.za/~s1830088/wits-career-portal/php/Verify.php?email='.$company_email.'&account_verify='.$hash.'
                     ';
                     //http://lamp.ms.wits.ac.za/~s1830088/wits-career-portal/php/Verify.php?email='.$company_email.'&account_verify='.$hash.'
                     
-                                //   
+                                //   http://localhost/wits-career-portal/php/Verify.php?email='.$company_email.'&account_verify='.$hash.'
                     $headers = 'From:noreply@yourwebsite.com' . "\r\n";
                     mail($to, $subject, $message, $headers);
                     

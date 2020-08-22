@@ -1,6 +1,6 @@
 <?php
          
-    // $con = mysqli_connect("127.0.0.1", "s1830088", "s1830088", "d1830088") or die(mysql_error($con)); // Connect to database server(localhost) with username and password.
+    // $con = mysqli_connect("localhost", "s1830088", "s1830088", "d1830088") or die(mysql_error($con)); // Connect to database server(localhost) with username and password.
     // mysqli_select_db($con,"d1830088") or die(mysqli_error($con)); // Select registration database.
 
     $con = mysqli_connect("localhost", "root", "Sm*22^03%#", "organization") or die(mysql_error($con)); // Connect to database server(localhost) with username and password.

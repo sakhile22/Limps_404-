@@ -55,12 +55,12 @@ jobs:
             #     # command: phpdbg -qrr vendor/bin/phpunit tests/Unit --coverage-html run/coverage-report
             #     command: npm run coverage
             
-            # - coveralls/upload:
-            #     path_to_lcov: ./coverage/lcov.info
+            - coveralls/upload:
+                path_to_lcov: ./coverage/lcov.info
 
-            # - run:
-            #     name: "coveralls"
-            #     command: npm run coveralls
+            - run:
+                name: "coveralls"
+                command: npm run coveralls
 
             - store_artifacts:
                 path:  build/coverage-report

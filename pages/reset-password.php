@@ -1,6 +1,6 @@
 
 <main>
-    <link rel="stylesheet" href="../css/ResetPasswordStyle.css">
+    <link rel="stylesheet" href="../css/ResetPasswordStyle.css?v=1.1">
     <div class="main-wrapper">
         <section class="default-section">
             <h1>Reset your password</h1>

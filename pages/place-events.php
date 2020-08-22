@@ -110,7 +110,7 @@
           <div class="profile">
             <?php
 
-              // $con = mysqli_connect("127.0.0.1", "s1830088", "s1830088") or die(mysqli_error($con));
+              // $con = mysqli_connect("localhost", "s1830088", "s1830088") or die(mysqli_error($con));
               // mysqli_select_db($con,"d1830088") or die(mysqli_error($con));
               $con = mysqli_connect("localhost", "root", "Sm*22^03%#") or die(mysqli_error($con));
               mysqli_select_db($con,"organization") or die(mysqli_error($con));
