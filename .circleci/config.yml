@@ -40,9 +40,9 @@ jobs:
                 paths:
                     - ./vendor
 
-            - run:
-                name: "Generate App key"
-                command: php artisan key:generate
+            # - run:
+            #     name: "Generate App key"
+            #     command: php artisan key:generate
 
             # run tests with phpunit
             - run:
