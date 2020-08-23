@@ -55,15 +55,20 @@ jobs:
             #     # command: phpdbg -qrr vendor/bin/phpunit tests/Unit --coverage-html run/coverage-report
             #     command: npm run coverage
             
-            - coveralls/upload:
-                path_to_lcov: ./coverage/lcov.info
+            # - coveralls/upload:
+            #     path_to_lcov: ./coverage/lcov.info
 
-            - run:
-                name: "coveralls"
-                command: npm run coveralls
+            # - run:
+            #     name: "coveralls"
+            #     command: npm run coveralls
 
             - store_artifacts:
                 path:  build/coverage-report
+
+            - run:
+                name: Install and Make
+                command: npm install && make test-coverage
+            - coveralls/upload
 
             
 # coverage.xml | coveralls --verbose
@@ -75,3 +80,8 @@ machine:
 notify:
     webhooks:
         - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
+
+- run:
+    name: Install and Make
+    command: npm install && make test-coverage
+- coveralls/upload
