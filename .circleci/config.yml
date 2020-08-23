@@ -10,9 +10,9 @@ jobs:
         steps:
             - checkout
 
-            - run:
-                name: Install and Make
-                command: npm install && make test-coverage
+            - run: npm install
+                # name: Install and Make
+                # command: npm install && make test-coverage
             - coveralls/upload
 
             - run:
@@ -71,10 +71,10 @@ jobs:
             
 # coverage.xml | coveralls --verbose
 
-machine:
-    environment:
-        COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
+# machine:
+#     environment:
+#         COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
 
-notify:
-    webhooks:
-        - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
+# notify:
+#     webhooks:
+#         - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
