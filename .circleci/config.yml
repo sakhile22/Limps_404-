@@ -47,8 +47,8 @@ jobs:
             # run tests with phpunit
             - run:
                 name: "Run Unit Tests"
-                # command: ./vendor/bin/phpunit tests/Unit
-                command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-html build/coverage-report
+                command: ./vendor/bin/phpunit tests/unit
+                # command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-html build/coverage-report
 
             # - run: # run code coverage report
             #     name: code-coverage
