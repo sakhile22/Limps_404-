@@ -61,9 +61,6 @@ jobs:
           name: "Run Unit Tests"
           command: ./vendor/bin/phpunit tests/Unit
           
-      - codecov/upload:
-          file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
-          
       - run:
           name: "Create database and run migration"
           command: |
@@ -74,19 +71,9 @@ jobs:
           name: "Run Http Tests"
           command: ./vendor/bin/phpunit tests/Feature
           
-
-     
-     
-     
-    
           
-      
-          
-      
-     
-notify:
-    webhooks:
-        - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
+      - codecov/upload:
+          file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
 
      
 
