@@ -6,5 +6,4 @@
             $this->assertTrue(true);
         }
     }
-    
-?>
+

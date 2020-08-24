@@ -43,10 +43,6 @@ jobs:
                 name: "Run Unit Tests"
                 command: phpdbg -qrr vendor/bin/phpunit --coverage-clover ./tests/report
 
-            - run:
-                name: Upload coveragre results to codecov
-                command: bash <(curl -s https://codecov.io/bash) -F $CIRCLE_JOB
-
             - store_artifacts:
                 path:  build/coverage-report
 
