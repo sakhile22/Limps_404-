@@ -10,11 +10,10 @@ jobs:
         steps:
             - checkout
 
-        #     - run: npm install
-        #         # name: Install and Make
-        #         # command: npm install && make test-coverage
-        #     - run: make test-coverage
-        #     - coveralls/upload
+            # - run:
+            #     name: Install and Make
+            #     command: npm install && make test-coverage
+            # - coveralls/upload
 
             - run:
                 name: "Prepare Environment"
@@ -61,10 +60,6 @@ jobs:
             
             - coveralls/upload:
                 path_to_lcov: build/coverage-report
-
-            # - run:
-            #     name: "coveralls"
-            #     command: npm run coveralls
 
             - store_artifacts:
                 path:  build/coverage-report
