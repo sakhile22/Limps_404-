@@ -44,10 +44,23 @@ jobs:
             # run tests with phpunit
             - run:
                 name: "Run Unit Tests"
-                command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-html ./tests/report
+                command: phpdbg -qrr vendor/bin/phpunit --coverage-clover ./tests/report
 
             - store_artifacts:
                 path:  build/coverage-report
+
+                - run:
+          name: "Run Unit Tests"
+          command: ./vendor/bin/phpunit tests/Unit
+          
+            - run:
+                name: "Create database and run migration"
+                command: |
+                    touch database/database.sqlite
+                    php artisan migrate --env=testing
+            - run:
+                name: "Run Http Tests"
+                command: ./vendor/bin/phpunit tests/Feature
 
             - codecov/upload:
                 file: ./tests/report
