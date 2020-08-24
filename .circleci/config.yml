@@ -7,13 +7,14 @@ jobs:
             # Specify the version you desire here
             - image: circleci/php:7.4-node-browsers
 
-        steps:
-            - checkout
+        # steps:
+        #     - checkout
 
-            - run: npm install
-                # name: Install and Make
-                # command: npm install && make test-coverage
-            - coveralls/upload
+        #     - run: npm install
+        #         # name: Install and Make
+        #         # command: npm install && make test-coverage
+        #     - run: make test-coverage
+        #     - coveralls/upload
 
             - run:
                 name: "Prepare Environment"

@@ -1,4 +1,6 @@
 {
+    "name" : "software-design-project",
+    "description": "",
     "require": {
         "phpunit/phpunit": "^9.3"
     },
@@ -11,5 +13,8 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
