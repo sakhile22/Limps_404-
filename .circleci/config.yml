@@ -59,7 +59,7 @@ jobs:
             #     command: npm run coverage
             
             - coveralls/upload:
-                path: build/coverage-report
+                path_to_lcov: --coverage-html build/coverage-report
 
 
             - store_artifacts:
