@@ -40,7 +40,7 @@ jobs:
 
             # run tests with phpunit
             - run:
-                name: "Run Unit Tests"
+                name: "Report coverage"
                 command: phpdbg -qrr vendor/bin/phpunit --coverage-clover ./tests/report
 
             - run:
@@ -49,7 +49,7 @@ jobs:
 
             - run:
                 name: "Run Unit Tests"
-                command: ./vendor/bin/phpunit tests/unit
+                command: ./vendor/bin/phpunit tests/Unit
           
             - run:
                 name: "Create database and run migration"
