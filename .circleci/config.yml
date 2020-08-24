@@ -1,66 +1,94 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
 version: 2.1
 orbs:
-    codecov: codecov/codecov@1.0.3
+  codecov: codecov/codecov@1.0.3
 jobs:
-    build:
-        docker:
-            - image: circleci/php:7.4-node-browsers
+  build:
+    docker:
+      # Specify the version you desire here
+      - image: circleci/php:7.4-node-browsers
 
-        steps:
-            - checkout
+    steps:
+      - checkout
 
-            - run: npm install
+      - run:
+          name: "Prepare Environment"
+          command: |
+            sudo apt update
+            sudo docker-php-ext-install zip
+      - run:
+          name: "Create Environment file"
+          command: |
+            mv .env.testing .env
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            # "composer.lock" can be used if it is committed to the repo
+            - v1-dependencies-{{ checksum "composer.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
-            - run:
-                name: "Prepare Environment"
-                command: |
-                    sudo apt update
-                    sudo docker-php-ext-install zip
+      - run:
+          name: "Install Dependencies"
+          command: composer install -n --prefer-dist
 
-            - run:
-                name: "Create Environment file"
-                command: |
-                    mv .env.testing .env
+      - save_cache:
+          key: v1-dependencies-{{ checksum "composer.json" }}
+          paths:
+            - ./vendor
 
-            # Download and cache dependencies
-            - restore_cache:
-                keys:
-                - v1-dependencies-{{ checksum "composer.json" }}
-                - v1-dependencies-
-
-            - run:
-                name: "Install Dependencies"
-                command: composer install -n --prefer-dist
-
-            - save_cache:
-                key: v1-dependencies-{{ checksum "composer.json" }}
-                paths:
-                    - ./vendor
-
-            # - run:
-            #     name: "Generate App key"
-            #     command: php artisan key:generate
-
-            # run tests with phpunit
-            - run:
-                name: "Run Unit Tests"
-                command: phpdbg -qrr vendor/bin/phpunit --coverage-clover ./tests/report
-
-            - store_artifacts:
-                path:  build/coverage-report
-
-            - run:
-                name: "Run Unit Tests"
-                command: ./vendor/bin/phpunit tests/unit
+      - run:
+          name: "Generate App key"
+          command: php artisan key:generate
+      - run:
+          name: "Run tests"
+          command:  phpdbg -qrr vendor/bin/phpunit --coverage-clover ./tests/report
+         
           
-            # - run:
-            #     name: "Create database and run migration"
-            #     command: |
-            #         touch database/database.sqlite
-            #         php artisan migrate --env=testing
-            # - run:
-            #     name: "Run Http Tests"
-            #     command: ./vendor/bin/phpunit tests/Feature
+      
+      - store_artifacts:
+          path: build/coverage-report
+          
+      
+       
+      
 
-            - codecov/upload:
-                file: ./tests/report
+      # run tests with phpunit
+      - run:
+          name: "Run Unit Tests"
+          command: ./vendor/bin/phpunit tests/Unit
+          
+      - run:
+          name: "Create database and run migration"
+          command: |
+            touch database/database.sqlite
+            php artisan migrate --env=testing
+
+      - run:
+          name: "Run Http Tests"
+          command: ./vendor/bin/phpunit tests/Feature
+          
+          
+      - codecov/upload:
+          file: ./tests/report
+
+     
+
+          
+
+     
+     
+     
+         
+     
+         
+
+          
+      
+          
+      
+
+
