@@ -46,10 +46,6 @@ jobs:
             - run:
                 name: "Generate App key"
                 command: php artisan key:generate
-
-            - run:
-                name: "Run Unit Tests"
-                command: ./vendor/bin/phpunit tests/Unit
           
             - run:
                 name: "Create database and run migration"
