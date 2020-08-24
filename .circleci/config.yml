@@ -4,7 +4,7 @@
 #
 version: 2.1
 orbs:
-  coveralls: coveralls/coveralls@1.0.6
+  codecov: codecov/codecov@1.0.3
 jobs:
   build:
     docker:
@@ -60,6 +60,9 @@ jobs:
       - run:
           name: "Run Unit Tests"
           command: ./vendor/bin/phpunit tests/Unit
+          
+      - codecov/upload:
+          file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
           
       - run:
           name: "Create database and run migration"
