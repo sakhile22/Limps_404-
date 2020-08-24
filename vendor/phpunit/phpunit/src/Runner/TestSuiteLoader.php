@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /*
  * This file is part of PHPUnit.
  *
@@ -13,12 +13,10 @@ use ReflectionClass;
 
 /**
  * An interface to define how a test suite should be loaded.
- *
- * @deprecated see https://github.com/sebastianbergmann/phpunit/issues/4039
  */
 interface TestSuiteLoader
 {
-    public function load(string $suiteClassFile): ReflectionClass;
+    public function load(string $suiteClassName, string $suiteClassFile = ''): ReflectionClass;
 
     public function reload(ReflectionClass $aClass): ReflectionClass;
 }
