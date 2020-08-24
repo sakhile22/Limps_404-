@@ -45,7 +45,7 @@ jobs:
           command: php artisan key:generate
       - run:
           name: "Run tests"
-          command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
+          command:  phpdbg -qrr vendor/bin/phpunit --coverage-clover ./tests/report
          
           
       
@@ -73,7 +73,7 @@ jobs:
           
           
       - codecov/upload:
-          file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
+          file: ./tests/report
 
      
 
