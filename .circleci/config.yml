@@ -51,9 +51,9 @@ jobs:
             #     path_to_lcov: build/coverage-report
 
             - name: npm install, make test-coverage
-                run: |
-                    npm install
-                    make test-coverage
+            run: |
+                npm install
+                make test-coverage
 
             - store_artifacts:
                 path: build/coverage-report
