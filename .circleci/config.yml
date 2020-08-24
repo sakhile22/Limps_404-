@@ -1,8 +1,8 @@
 version: 2.1
 orbs:
-    coveralls: coveralls/coveralls@1.0.4
+    codecov: codecov/codecov@1.0.3
 jobs:
-    build:
+    one:
         docker:
             - image: circleci/php:7.4-node-browsers
 
@@ -48,7 +48,7 @@ jobs:
             # run tests with phpunit
             - run:
                 name: "Run Unit Tests"
-                command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-html build/coverage-report
+                command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-html ./tests/report
             
             - coveralls/upload:
                 path_to_lcov: build/coverage-report
@@ -56,13 +56,5 @@ jobs:
             - store_artifacts:
                 path:  build/coverage-report
 
-            
-# coverage.xml | coveralls --verbose
-
-# machine:
-#     environment:
-#         COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
-
-# notify:
-#     webhooks:
-#         - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
+            - codecov/upload:
+                file: ./tests/report
