@@ -4,13 +4,16 @@ orbs:
 jobs:
     build:
         docker:
-            # Specify the version you desire here
             - image: circleci/php:7.4-node-browsers
 
         steps:
             - checkout
 
             - run: npm install
+                # name: Install and Make
+                # command: npm install && make test-coverage
+            # - run: make test-coverage
+            # - coveralls/upload
 
             - run:
                 name: "Prepare Environment"
@@ -23,6 +26,7 @@ jobs:
                 command: |
                     mv .env.testing .env
 
+            # Download and cache dependencies
             - restore_cache:
                 keys:
                 - v1-dependencies-{{ checksum "composer.json" }}
@@ -44,29 +48,21 @@ jobs:
             # run tests with phpunit
             - run:
                 name: "Run Unit Tests"
-                # command: ./vendor/bin/phpunit tests/unit
                 command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-html build/coverage-report
             
-            # - coveralls/upload:
-            #     path_to_lcov: build/coverage-report
-
-            - name: npm install, make test-coverage
-            run: |
-                npm install
-                make test-coverage
+            - coveralls/upload:
+                path_to_lcov: build/coverage-report
 
             - store_artifacts:
-                path: build/coverage-report
-
-            
+                path:  build/coverage-report
 
             
 # coverage.xml | coveralls --verbose
 
-machine:
-    environment:
-        COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
+# machine:
+#     environment:
+#         COVERALLS_REPO_TOKEN: ${process.env.COVERALLS_REPO_TOKEN}
 
-notify:
-    webhooks:
-        - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
+# notify:
+#     webhooks:
+#         - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
