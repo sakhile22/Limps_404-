@@ -9,9 +9,6 @@
         <testsuite name="Test Suite">
             <directory suffix="Test.php">tests/unit</directory>
         </testsuite>
-        <testsuite>
-            <directory>composer require --dev phpunit/php-code-coverage</directory>
-        </testsuite>
     </testsuites>
 
     <filter>
