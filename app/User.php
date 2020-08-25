@@ -18,8 +18,6 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
-    protected $postOffer = ['offer_title', 'company', 'location'];
-
     /**
      * The attributes that should be hidden for arrays.
      *
