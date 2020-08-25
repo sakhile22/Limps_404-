@@ -21,14 +21,14 @@ class PostOfferTest extends TestCase
 
     public function testPostOfferCreation()
     {
-        $user = new PostOffer([
+        $offer = new PostOffer([
             'offer_title' => 'Software Development',
             'company' => 'inLocal.io',
             'location' => 'Nkomo 22B'
         ]);
 
-        $this->assertEquals('Software Development', $user->offer_title);
-        $this->assertEquals('inLocal.io', $user->company);
-        $this->assertEquals('location',$user->location);
+        $this->assertEquals('Software Development', $offer->offer_title);
+        $this->assertEquals('inLocal.io', $offer->company);
+        $this->assertEquals('location',$offer->location);
     }
 }

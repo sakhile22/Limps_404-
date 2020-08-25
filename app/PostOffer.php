@@ -2,12 +2,12 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
+// use Illuminate\Notifications\Notifiable;
 // use Illuminate\Foundation\Auth\PostOffer as Authenticatable;
 
 class PostOffer
 {
-    use Notifiable;
+    // use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +15,7 @@ class PostOffer
      * @var array
      */
 
-    protected $fillable = [
+    public $fillable = [
         'offer_title', 'company', 'location'
     ];
 
