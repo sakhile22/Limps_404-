@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\PostOffer;
 
-class ExampleTest extends TestCase
+class PostOfferTest extends TestCase
 {
     /**
      * A basic test example.
