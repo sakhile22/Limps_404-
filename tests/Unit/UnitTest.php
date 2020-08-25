@@ -29,4 +29,17 @@ class ExampleTest extends TestCase
 
         $this->assertEquals('Test User', $user->name);
     }
+
+    public function testPostOfferCreation()
+    {
+        $user = new User([
+            'offer_title' => 'Software Development',
+            'company' => 'inLocal.io',
+            'location' => 'Nkomo 22B'
+        ]);
+
+        $this->assertEquals('Software Development', $user->name);
+        $this->assertEquals('inLocal.io', $user->company);
+        $this->assertEquals('location',$user->location);
+    }
 }
