@@ -1,5 +1,6 @@
 
 <main>
+    <title>Reset Password</title>
     <link rel="stylesheet" href="../css/ResetPasswordStyle.css?v=1.1">
     <div class="main-wrapper">
         <section class="default-section">

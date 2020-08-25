@@ -1,5 +1,6 @@
 
 <main>
+    <title>New Password</title>
     <link rel="stylesheet" href="../css/CreateNewPasswordStyle.css">
     <div class="main-wrapper">
         <section class="default-section">
