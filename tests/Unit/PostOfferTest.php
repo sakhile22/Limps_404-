@@ -27,7 +27,7 @@ class PostOfferTest extends TestCase
             'location' => 'Nkomo 22B'
         ]);
 
-        $this->assertEquals('Software Development', $user->name);
+        $this->assertEquals('Software Development', $user->offer_title);
         $this->assertEquals('inLocal.io', $user->company);
         $this->assertEquals('location',$user->location);
     }
