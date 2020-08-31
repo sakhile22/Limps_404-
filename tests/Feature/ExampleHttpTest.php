@@ -1,32 +1,54 @@
-<?php
 
-namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+// namespace Tests\Feature;
 
-class ExampleTest extends TestCase
-{
-    use WithFaker;
+// use Tests\TestCase;
+// use Illuminate\Foundation\Testing\RefreshDatabase;
+// use Illuminate\Foundation\Testing\WithFaker;
 
-    public function testUserCreationEndpointTest()
-    {
-        $name = $this->faker->name();
-        $email = $this->faker->email();
-        $password = "mypassword";
+// class ExampleTest extends TestCase
+// {
+//     use WithFaker;
 
-        $response = $this->postJson('/api/createuser', [
-            'name' => $name, 
-            'email' => $email,
-            'password' => $password,
-            'password_confirmation' => $password
-        ]); 
+//     public function testUserCreationEndpointTest()
+//     {
+//         $name = $this->faker->name();
+//         $email = $this->faker->email();
+//         $password = "mypassword";
 
-        $response
-            ->assertStatus(500);
+//         $response = $this->postJson('/api/createuser', [
+//             'name' => $name, 
+//             'email' => $email,
+//             'password' => $password,
+//             'password_confirmation' => $password
+//         ]); 
+
+//         $response
+//             ->assertStatus(500);
 //             ->assertExactJson([
 //                 'message' => "Successfully created user!",
 //             ]);
-    }
+//     }
+// }
+
+<?php
+function testUserCreationEndpointTest()
+{
+    $name = $this->faker->name();
+    $email = $this->faker->email();
+    $password = "mypassword";
+
+    $response = $this->postJson('/api/createuser', [
+        'name' => $name, 
+        'email' => $email,
+        'password' => $password,
+        'password_confirmation' => $password
+    ]); 
+
+    $response
+        ->assertStatus(201)
+        ->assertExactJson([
+            'message' => "Successfully created user!",
+        ]);
+
 }
