@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-$link = mysqli_connect('127.0.0.1','s1732967','Tshamano93@','d1732967');//establish connection
+$link = mysqli_connect('localhost','root','','admin');
 
 if(strlen($_SESSION['username']) == 0){  //check string length
 
@@ -26,16 +26,17 @@ else{
 
 	<title>students</title>
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="fontawesome-free-5.13.1-web/css/all.css">
-	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+	<link href="css/datatables.min.css" rel="stylesheet">
+
 
 </head>
 <body>
 
 	<div class="brand">
-		<img src="img/wits.png" style="height: 50px; margin:0px 0px 0px 20px;">
+		<img src="img/wits.png" style="height: 50px; margin:0px 0px 0px 20px; display: inline-flex;">
 		<span class="menu-btn">
 			<i class="fa fa-bars"></i>
 		</span>
@@ -63,11 +64,13 @@ else{
 
 								 <li><a href="offers.php"><i class="fa fa-gift"></i>&nbsp;Offers</a></li>
 
-								 <li><a href="organizations.php"><i class="fa fa-briefcase"></i> &nbsp;Organisations</a></li>
+								 <li><a href="organizations.php"><i class="fa fa-briefcase"></i> &nbsp;Organizations</a></li>
 
-								 <li><a href="events.php"><i class="fas fa-calendar-alt"></i>&nbsp;Events</a></li>
+								 <li><a href="events.php"><i class="fas fa-calendar-alt"></i>&nbsp; Events</a></li>
 
 								 <li><a href="feedback.php"><i class="fas fa-comments"></i>&nbsp;Feedback</a></li>
+
+								 <li class="logout"><a href="logout.php"><i class="fas fa-sign-out-alt" style="font-size:15px;"></i>&nbsp;Logout</a></li>
 				</ul>
 			</nav>
 
@@ -80,24 +83,21 @@ else{
 						<h2 class="page-title">Students</h2>
 
 						<!-- Table -->
-						<div class="panel panel-default">
-							<div class="panel-body">
-
-								<table id="zctb" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+								<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
 									<thead>
 
 										<tr>
-											<th>Name</th>
-											<th>Student Number</th>
-											<th>SMSes Recieved</th>
-											<th>Emails Recieved</th>
+											<th class="th-sm">Name</th>
+											<th class="th-sm">Student Number</th>
+											<th class="th-sm">SMSes Recieved</th>
+											<th class="th-sm">Emails Recieved</th>
 										</tr>
 
 									</thead>
 									<tbody>
 
 									<?php
-									$result = mysqli_query($link,"select * from student");
+									$result = mysqli_query($link,"select * from students");
 									while($row = mysqli_fetch_assoc($result)):
 									 ?>
 
@@ -106,39 +106,62 @@ else{
 										<td><?php echo $row['Name'] ?></td>
 										<td><?php echo $row['Student_No'] ?></td>
 										<td><?php echo $row['Number_Of_SMS'] ?></td>
-										<td><?php echo $row['Number_Of_EMAIL'] ?></td>
+										<td><?php echo $row['Number_Of_Email'] ?></td>
 									</tr>
 
 
 								 <?php endwhile; ?>
 									</tbody>
+									<tfoot>
+										<tr>
+											<th>Name</th>
+											<th>Student Number</th>
+											<th>SMSes Recieved</th>
+											<th>Emails Recieved</th>
+										</tr>
+									</tfoot>
 								</table>
-					</div>
 
-
-
-
-
-
-
-							</div>
 						</div>
 					</div>
 				</div>
 
 			</div>
 		</div>
+
+		<!-- Footer -->
+<footer class="page-footer font-small">
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3">Copyright © 2000-2019 - University of the Witwatersrand, Johannesburg.
 	</div>
+	<!-- Copyright -->
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/main.js"></script>
+</footer>
+<!-- Footer -->
 
+<!-- Loading Scripts -->
+
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+
+<!-- Your custom scripts (optional) -->
+<script type="text/javascript"></script>
+	<script type="text/javascript" src="js/datatables.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function () {
+	$('#dtBasicExample').DataTable();
+	$('.dataTables_length').addClass('bs-select');
+	});
+	</script>
+
+	<script type="text/javascript">
+	$(document).ready(function () {
+			$('.menu-btn').click(function () {
+				$('nav.ts-sidebar').toggleClass('menu-open');
+			});
+	});
+	</script>
 
 </body>
 </html>

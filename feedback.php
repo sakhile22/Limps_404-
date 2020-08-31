@@ -1,7 +1,7 @@
 <?php
   session_start();
   error_reporting(0);
-  $link = mysqli_connect('127.0.0.1','s1732967','Tshamano93@','d1732967');//establish connection
+  $link = mysqli_connect('localhost','root','','admin');
 
   if(strlen($_SESSION['username']) == 0){  //check string length
 
@@ -18,32 +18,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Feedback</title>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
   	<link rel="stylesheet" href="css/style.css">
   	<link rel="stylesheet" href="fontawesome-free-5.13.1-web/css/all.css">
-  	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+  	<link href="css/datatables.min.css" rel="stylesheet">
 
     <style>
       .container{
-        border: 2px solid #dedede;
-        background-color: #f1f1f1;
-        border-radius: 30px;
-        border-color:#4dff88;
+        border: 1px solid #85714D;
+        min-height: 50px;
+        border-radius: 10px;
         width: 100%;
       }
-      .darker{
-        background-color: #ddd;
-      }
+
     </style>
 
   </head>
   <body>
 
     	<div class="brand">
-    		<img src="img/wits.png" style="height: 50px; margin:0px 0px 0px 20px;">
+    		<img src="img/wits.png" style="height: 50px; margin:0px 0px 0px 20px; display: inline-flex;">
     		<span class="menu-btn">
     			<i class="fa fa-bars"></i>
     		</span>
@@ -71,11 +71,13 @@
 
                      <li><a href="offers.php"><i class="fa fa-gift"></i>&nbsp;Offers</a></li>
 
-    								 <li><a href="organizations.php"><i class="fa fa-briefcase"></i> &nbsp;Organisations</a></li>
+    								 <li><a href="organizations.php"><i class="fa fa-briefcase"></i> &nbsp;Organizations</a></li>
 
-    								 <li><a href="events.php"><i class="fas fa-calendar-alt"></i>&nbsp;Events</a></li>
+    								 <li><a href="events.php"><i class="fas fa-calendar-alt"></i>&nbsp; Events</a></li>
 
     								 <li><a href="feedback.php"><i class="fas fa-comments"></i>&nbsp;Feedback</a></li>
+
+                     <li class="logout"><a href="logout.php"><i class="fas fa-sign-out-alt" style="font-size:15px;"></i>&nbsp;Logout</a></li>
     				</ul>
     			</nav>
 
@@ -94,25 +96,57 @@
                  while($row = mysqli_fetch_assoc($result)):
                  ?>
                 <div class="container darker" style="margin-top:10px" >
-                <h4 style="color:#000000;">
-                  <b><?php echo $row['sender'] ?></b>
+                <h4>
+                  <small>sender:</small>
+                   <?php echo $row['sender'] ?>
                   <br>
-                  <?php echo $row['message'] ?>
-
+                  <?php echo $row['feedbackdata'] ?>
                 </h4>
-                <span class="time-right" style="float:right;"><?php echo $row['date'] ?></span>
+                <span class="time-right" style="float:right;"><?php echo $row['id'] ?></span>
                 </div>
               <?php endwhile; ?>
 
 
               </div>
-
-
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+    <!-- Footer -->
+<footer class="page-footer font-small">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">Copyright © 2000-2019 - University of the Witwatersrand, Johannesburg.
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+<!-- Loading Scripts -->
+
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+
+<!-- Your custom scripts (optional) -->
+<script type="text/javascript"></script>
+  <script type="text/javascript" src="js/datatables.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+  $('#dtBasicExample').DataTable();
+  $('.dataTables_length').addClass('bs-select');
+  });
+  </script>
+
+  <script type="text/javascript">
+  $(document).ready(function () {
+      $('.menu-btn').click(function () {
+        $('nav.ts-sidebar').toggleClass('menu-open');
+      });
+  });
+  </script>
 
   </body>
 </html>

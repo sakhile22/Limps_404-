@@ -1,7 +1,7 @@
 <?php
  session_start();
  error_reporting(0);
- $link = mysqli_connect('127.0.0.1','s1732967','Tshamano93@','d1732967');//establish connection
+ $link = mysqli_connect('localhost','root','','admin'); //establish connection
 
  if(isset($_POST['submit'])){
 
@@ -9,21 +9,14 @@
    $username = $_POST['username'];
    $password = $_POST['password'];
 
-   if($username =='' || $password ==''){
-     ?>
-     <script type="text/javascript">
-       alert("username or password cannot be empty!");
-       window.location = "login.php";
-     </script>
-     <?php
-   }else {
 
-     if($result = mysqli_query($link,"SELECT * FROM admin WHERE Employee_No ='$username' and Password ='$password'")){
+     if($result = mysqli_query($link,"SELECT * FROM titi WHERE user_id ='$username' and password ='$password'")){
 
        if(mysqli_num_rows($result) ==1){
          $user = mysqli_fetch_assoc($result);
-         $_SESSION['username'] = $user['Name'];
-         $_SESSION['id'] = $user['Employee_No'];
+         $_SESSION['username'] = $user['name'];
+         $_SESSION['signedIn'] = True;
+         $_SESSION['id'] = $user['user_id'];
          //echo "name :" .$_SESSION['username'];
          //header('dashboard.php');
 
@@ -42,7 +35,7 @@
          <?php
        }
      }
-   }
+
  }
 
  header('Cache-Control: no cache');
