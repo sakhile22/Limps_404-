@@ -44,6 +44,10 @@
         //     header("Location: ../pages/sign-up.php?error=username");
         //     exit();
         // }
+        else if (strlen($password) < 8) {
+            header("Location: ../pages/sign-up.php?error=passwordisshort");
+            exit();
+        }
         else if ($password !== $passwordRepeat) {
 
             header("Location: ../pages/sign-up.php?error=passwordmismatch&uid=".$company_name."&email=".$company_email."&regnum=".
@@ -109,11 +113,11 @@
 
                      
                     Please click this link to activate your account:
-                    http://lamp.ms.wits.ac.za/~s1830088/wits-career-portal/php/Verify.php?email='.$company_email.'&account_verify='.$hash.'
+                    http://localhost/wits-career-portal/php/Verify.php?email='.$company_email.'&account_verify='.$hash.'
                     ';
                     //http://lamp.ms.wits.ac.za/~s1830088/wits-career-portal/php/Verify.php?email='.$company_email.'&account_verify='.$hash.'
                     
-                                //   http://localhost/wits-career-portal/php/Verify.php?email='.$company_email.'&account_verify='.$hash.'
+                    //http://localhost/wits-career-portal/php/Verify.php?email='.$company_email.'&account_verify='.$hash.'
                     $headers = 'From:noreply@yourwebsite.com' . "\r\n";
                     mail($to, $subject, $message, $headers);
                     

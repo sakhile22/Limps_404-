@@ -28,6 +28,9 @@
             else if ($_GET["error"] == "username") {
               echo "<p class='signup-error'>Invalid username!</p>";
             }
+            else if ($_GET["error"] == "passwordisshort") {
+              echo "<p class='signup-error'>Required password should have minimum of 8 characters!</p>";
+            }
             else if ($_GET["error"] == "passwordmismatch") {
               echo "<p class='signup-error'>Passwords does not match!</p>";
             }

@@ -5,7 +5,7 @@ if (isset($_POST["submit_request"])) {
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32); // to authentcate user
 
-    // $url = "http://lamp.ms.wits.ac.za/~s1830088/wits-career-portal/pages/create-new-password.php?selector=" . $selector . '&validator=' . bin2hex($token);
+    // $url = "https://lamp.ms.wits.ac.za/~s1830088/wits-career-portal/pages/create-new-password.php?selector=" . $selector . '&validator=' . bin2hex($token);
     $url = "http://localhost/wits-career-portal/pages/create-new-password.php?selector=" . $selector . '&validator=' . bin2hex($token);
 
     $expires = date("U") + 1800;

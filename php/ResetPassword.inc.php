@@ -21,7 +21,7 @@
         // $connection = mysqli_connect("localhost", "s1830088", "s1830088", "d1830088");
 
 
-        $sql = "SELECT * FROM pwdReset WHERE pwsResetSelector=? AND pwdResetExpires >= ?";
+        $sql = "SELECT * FROM pwdReset WHERE pwdResetSelector=? AND pwdResetExpires >= ?";
         $stmt = mysqli_stmt_init($connection);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             echo "There was an error";
