@@ -11,7 +11,7 @@ class PostOfferTest extends TestCase
 {
 
     public function testPostOffer() {
-        $post_offer = new User(
+        $post_offer = new PostOffer(
             [
                 'offer_title' => "Software Engineering"
             ]
