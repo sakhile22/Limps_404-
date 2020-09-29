@@ -22,13 +22,13 @@ class SignUpTest extends TestCase
     public function testUserCreation()
     {
         $user = new User([
-            'name' => "Test User",
+            'company_name' => "Test User",
             'telephone' => "0715997426",
             'email' => "test@mail.com",
             'password' => bcrypt("testpassword")
         ]);   
 
-        $this->assertEquals('Test User', $user->name);
+        $this->assertEquals('Test User', $user->company_name);
         $this->assertEquals('0715997426', $user->telephone);
         $this->assertEquals('test@mail.com', $user->email);
         // $this->assertEquals('password', $user->password);
