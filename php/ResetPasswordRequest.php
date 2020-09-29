@@ -31,7 +31,7 @@ if (isset($_POST["submit_request"])) {
         mysqli_stmt_execute($stmt);
     }
 
-    $sql = "INSERT INTO pwdReset (pwdResetEmail, pwsResetSelector, pwdResetToken, pwdResetExpires) VALUES (?,?,?,?);";
+    $sql = "INSERT INTO pwdReset (pwdResetEmail, pwdResetSelector, pwdResetToken, pwdResetExpires) VALUES (?,?,?,?);";
     $stmt = mysqli_stmt_init($connection);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         echo "There was an error";
