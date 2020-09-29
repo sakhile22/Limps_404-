@@ -3,21 +3,29 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-// use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
-use App\PostOffer;
+use App\User;
 
-class PostOfferTest extends TestCase
+class SignUpTest extends TestCase
 {
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testBasicTest()
+    {
+        $this->assertTrue(true);
+    }
 
     public function testPostOffer() {
-        $post_offer = new PostOffer(
-            [
-                'offer_title' => "Software Engineering"
-            ]
-        );
+        $user = new User([
+            'offer_title' => "Test Offer Title",
+        ]);   
 
-        $this.assertEquals('Software Engineering', $post_offer->offer_title);
+        $this->assertEquals('Test Offer Title', $user->offer_title);
+        
     }
 
 }
