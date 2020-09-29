@@ -3,9 +3,9 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-// use Illuminate\Foundation\Auth\PostOffer as Authenticatable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class PostOffer extends \PHPUnit\Framework\TestCase
+class User extends Authenticatable
 {
     use Notifiable;
 
