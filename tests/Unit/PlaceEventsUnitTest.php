@@ -21,7 +21,7 @@ class PlaceEventsTest extends TestCase
         $this->assertEquals('Test Person', $user->name_contact_person);
         $this->assertEquals('0715396564', $user->phone_number);
         $this->assertEquals('Test Title', $user->event_title);
-        $this->assertEquals('Description of an even', $user->event_description);
+        $this->assertEquals('Description of an event', $user->event_description);
     }
 
 }
