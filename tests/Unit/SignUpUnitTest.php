@@ -41,8 +41,14 @@ class SignUpTest extends TestCase
         
     }
 
-    // public function testPostOffer() {
+    public function testPostOffer() {
+        $post_offer = new User(
+            [
+                'offer_title' => "Software Engineering"
+            ]
+        );
 
-    // }
+        $this.assertEquals('Software Engineering', $post_offer->offer_title);
+    }
 
 }
