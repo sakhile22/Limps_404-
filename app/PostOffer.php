@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 // use Illuminate\Foundation\Auth\PostOffer as Authenticatable;
 
-class PostOffer extends Authenticatable
+class PostOffer
 {
     use Notifiable;
 
